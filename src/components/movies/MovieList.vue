@@ -16,10 +16,11 @@
 
     <!-- (나중에 마지막으로) selectedGenreId 값에 따른 분기를 해야 합니다.
     -->
-    <!-- <div v-if="selectedGenreId===''" class="movie-list">
+
+    <div v-if="selectedGenreId===''" class="row">
       <MovieListItem v-for="movie in movies" :movie="movie" :key="movie.id" />
-    </div>-->
-    <div class="row">
+    </div>
+    <div v-else class="row">
       <MovieListItem v-for="movie in selectedMovies" :movie="movie" :key="movie.id" />
     </div>
   </div>
@@ -63,11 +64,10 @@ export default {
   methods: {
     getSelectedMovies() {
       const genreId = this.selectedGenreId;
-      console.log(genreId);
+
       this.selectedMovies = this.movies.filter(
         movie => movie.genre_id === genreId
       );
-      console.log(this.selectedMovies);
     }
   }
 };

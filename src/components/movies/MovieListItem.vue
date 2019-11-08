@@ -39,6 +39,7 @@ export default {
   },
   data() {
     // 활용할 데이터를 정의하시오.
+    return {};
   }
 };
 </script>
