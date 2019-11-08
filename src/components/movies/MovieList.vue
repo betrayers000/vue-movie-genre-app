@@ -2,21 +2,12 @@
   <div>
     <h1>영화 목록</h1>
     <h2>장르 선택</h2>
-    <!-- 2. 장르 선택(제일 마지막에 구현하시오.)
-    2-1. App 컴포넌트로 부터 받은 genres를 반복하여 드롭다운을 완성 해주세요.
-    2-2. 드롭다운은 selectedGenreId data와 양방향바인딩(v-model)이 됩니다.
-    2-3. 값 변경이 되면, 특정한 함수를 실행 해야합니다.
-    -->
+
     <select class="form-control" v-model="selectedGenreId">
-      <option :value="'default'">전체보기</option>
+      <option value="default">전체보기</option>
       <option v-for="genre in genres" :key="genre.id" :value="genre.id">{{genre.name}}</option>
     </select>
-    <!-- 1-3. 반복을 통해 호출하시오. 
-        필요한 경우 props를 데이터를 보내줍니다.
-    -->
 
-    <!-- (나중에 마지막으로) selectedGenreId 값에 따른 분기를 해야 합니다.
-    -->
     <div class="row">
       <MovieListItem v-for="movie in computedMoviesByGenreId" :movie="movie" :key="movie.id" />
     </div>
@@ -65,32 +56,6 @@ export default {
       );
     }
   }
-
-  // 메서드 사용
-  // methods: {
-  //   getSelectedMovies() {
-  //     const genreId = this.selectedGenreId;
-
-  //     this.selectedMovies = this.movies.filter(
-  //       movie => movie.genre_id === genreId
-  //     );
-  //   }
-  // },
-
-  // watch 사용 (초기엔 변화 없음)
-  // watch: {
-  //   selectedGenreId: {
-  //     handler(selectedGenreId) {
-  //       if (selectedGenreId === "default") {
-  //         this.selectedMovies = this.movies;
-  //       } else {
-  //         this.selectedMovies = this.movies.filter(
-  //           movie => movie.genre_id === selectedGenreId
-  //         );
-  //       }
-  //     }
-  //   }
-  // },
 };
 </script>
 

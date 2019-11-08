@@ -13,6 +13,8 @@
         </div>
         <div class="modal-body">
           <!-- 영화 설명을 출력하세요. -->
+          <img :src="movie.poster_url" alt="포스터" class="modal-img" />
+          <hr />
           <p>{{movie.description}}</p>
         </div>
         <div class="modal-footer">
@@ -42,5 +44,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.modal-img {
+  width: 100%;
+}
 </style>
