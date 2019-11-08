@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3 my-3">
+  <div class="col-12 col-md-6 col-lg-3 my-3">
     <!-- img 태그에 src와 alt값(영화제목)을 설정하시오 -->
     <img class="movie--poster my-3" :src="movie.poster_url" :alt="movie.name" />
     <!-- 영화 제목을 출력하시오. -->
